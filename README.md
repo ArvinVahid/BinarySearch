@@ -71,41 +71,6 @@ low              mid              high
 
 ---
 
-## 💻 پیاده‌سازی
-
-```csharp
-int MyBinarySearch(int search, int[] array)
-{
-    int low = 0;
-    int high = array.Length - 1;
-
-    while (low <= high)
-    {
-        int mid = low + (high - low) / 2;
-
-        if (array[mid] == search)
-            return mid;
-        else if (array[mid] < search)
-            low = mid + 1;
-        else
-            high = mid - 1;
-    }
-
-    return -1;
-}
-```
-
-### تست:
-
-```csharp
-int[] arr = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-Console.WriteLine(MyBinarySearch(3, arr));   // 2
-Console.WriteLine(MyBinarySearch(10, arr));  // 9
-Console.WriteLine(MyBinarySearch(100, arr)); // -1
-```
-
----
-
 ## ⏱️ پیچیدگی
 
 | معیار | مقدار | توضیح |
@@ -140,17 +105,6 @@ n = 1000 → 500 → 250 → 125 → ... → 1
 به جای `(low + high) / 2` از این استفاده می‌کنیم چون اگه `low` و `high` هر دو بزرگ باشن، `low + high` ممکنه **overflow** کنه.
 
 ---
-
-## 📁 خروجی برنامه
-
-```text
-MyBinarySearch(3, arr)   → 2
-MyBinarySearch(10, arr)  → 9
-MyBinarySearch(100, arr) → -1
-```
-
----
-
 ## 💎 جمع‌بندی
 
 باینری سرچ یه الگوریتم ساده ولی فوق‌العاده قدرتمنده:
